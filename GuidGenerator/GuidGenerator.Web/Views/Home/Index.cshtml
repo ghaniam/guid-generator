@@ -9,7 +9,7 @@
     <p>The generated guids can be retrieved below.</p>
 </div>
 
-<div class="center">
+<div class="text-center">
     @using (Html.BeginForm())
     {
         <label for="amount">Amount of Guids:</label>
@@ -20,9 +20,8 @@
 
 
 <div class="text-center">
-    @foreach(var g in Guids)
+    @foreach (var g in Guids)
     {
-        <b>@Guid.NewGuid().ToString()</b><br/>
+        <b>@g.ToString()</b><br />
     }
-    
 </div>

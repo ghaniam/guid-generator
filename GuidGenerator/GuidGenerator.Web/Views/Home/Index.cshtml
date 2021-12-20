@@ -1,0 +1,28 @@
+﻿@using GuidGenerator.Web.Controllers
+@{
+    ViewData["Title"] = "Home Page";
+    List<Guid> Guids = ((List<Guid>)ViewData[HomeController.GuidsViewDataKey]) ?? new List<Guid>();
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>The generated guids can be retrieved below.</p>
+</div>
+
+<div class="center">
+    @using (Html.BeginForm())
+    {
+        <label for="amount">Amount of Guids:</label>
+        <input type="number" name="guidAmount" value="1" />
+        <input type="submit" />
+    }
+</div>
+
+
+<div class="text-center">
+    @foreach(var g in Guids)
+    {
+        <b>@Guid.NewGuid().ToString()</b><br/>
+    }
+    
+</div>

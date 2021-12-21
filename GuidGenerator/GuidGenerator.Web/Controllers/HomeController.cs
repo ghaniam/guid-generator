@@ -22,6 +22,7 @@ namespace GuidGenerator.Web.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Index(int guidAmount)
         {
             var guids = new List<Guid>();
